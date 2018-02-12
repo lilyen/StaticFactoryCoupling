@@ -60,6 +60,11 @@ namespace StaticFactoryCoupling
         private static IStoreService sevenService = new SevenService();
         private static IStoreService familyService = new FamilyService();
 
+        internal static void SetSevenForTest(IStoreService service)
+        {
+            sevenService = service;
+        }
+
         internal static IStoreService GetStoreService(Order order)
         {
             if (order.StoreType == StoreType.Family)
